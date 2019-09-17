@@ -25,6 +25,7 @@ void LockManagerA::Release(Txn* txn, const Key& key) {
   // Implement this method!
 }
 
+// NOTE: The owners input vector is NOT assumed to be empty.
 LockMode LockManagerA::Status(const Key& key, vector<Txn*>* owners) {
   //
   // Implement this method!
@@ -52,9 +53,9 @@ void LockManagerB::Release(Txn* txn, const Key& key) {
   // Implement this method!
 }
 
+// NOTE: The owners input vector is NOT assumed to be empty.
 LockMode LockManagerB::Status(const Key& key, vector<Txn*>* owners) {
   //
   // Implement this method!
   return UNLOCKED;
 }
-
