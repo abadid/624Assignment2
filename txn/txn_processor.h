@@ -139,6 +139,12 @@ Mutex active_set_mutex_;
 
 // Lock Manager used for LOCKING concurrency implementations.
 LockManager* lm_;
+
+// Used for stopping the continuous loop that runs in the scheduler thread
+bool stopped_;
+
+// Gives us access to the scheduler thread so that we can wait for it to join later.
+pthread_t scheduler_thread_;
 };
 
 #endif  // _TXN_PROCESSOR_H_
